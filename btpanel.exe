@@ -1,0 +1,93 @@
+#!/bin/bash
+# +----------------------------------------------------------------------
+# | 葫芦侠:人民就是江山
+# | 版权©️ West2Cloud
+# | 擅自修改版权信息死妈
+# | 官网:http://west2cloud.cn/
+# | QQ群：255192313
+# +----------------------------------------------------------------------
+
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
+export PATH
+
+install_1(){
+  clear
+  echo -e "+----------------------------------------------------------------------"
+  echo -e "|\033[33m 开始回退1.0.3版本...\033[0m"
+  echo -e "+----------------------------------------------------------------------"
+  sleep 1s
+  yum install curl && curl -L https://raw.githubusercontent.com/Utuobw/bt/refs/heads/main/LinuxPanel-1.0.3.zip > LinuxPanel-1.0.3.zip && unzip LinuxPanel-* && cd panel && bash update.sh && cd .. && rm -f LinuxPanel-*.zip && rm -rf panel && cd /www/server/panel && echo "127.0.0.1 www.bt.cn" >> /etc/hosts && bt 14
+  exit 0;
+}
+
+install_2(){
+  clear
+  echo -e "+----------------------------------------------------------------------"
+  echo -e "|\033[33m 开始回退6.0.0版本...\033[0m"
+  echo -e "+----------------------------------------------------------------------"
+  sleep 1s
+  yum install curl && curl -L https://raw.githubusercontent.com/Utuobw/bt/refs/heads/main/LinuxPanel-6.0.0.zip > LinuxPanel-6.0.0.zip && unzip LinuxPanel-* && cd panel && bash update.sh && cd .. && rm -f LinuxPanel-*.zip && rm -rf panel && cd /www/server/panel && echo "127.0.0.1 www.bt.cn" >> /etc/hosts && bt 14
+  exit 0;
+}
+
+install_3(){
+  clear
+  echo -e "+----------------------------------------------------------------------"
+  echo -e "|\033[33m 开始回退7.9.3版本...\033[0m"
+  echo -e "+----------------------------------------------------------------------"
+  sleep 1s
+  yum install curl && curl -L https://raw.githubusercontent.com/Utuobw/bt/refs/heads/main/LinuxPanel-7.9.3.zip > LinuxPanel-7.9.3.zip && unzip LinuxPanel-* && cd panel && bash update.sh && cd .. && rm -f LinuxPanel-*.zip && rm -rf panel && cd /www/server/panel && echo "127.0.0.1 www.bt.cn" >> /etc/hosts && bt 14
+  exit 0;
+}
+
+e
+install_4(){
+  clear
+  echo -e "+----------------------------------------------------------------------"
+  echo -e "|\033[33m 开始回退7.4版本...\033[0m"
+  echo -e "+----------------------------------------------------------------------"
+  sleep 1s
+  yum install curl && curl -L https://raw.githubusercontent.com/Utuobw/bt/refs/heads/main/LinuxPanel-7.4.0.zip > LinuxPanel-7.4.0.zip && unzip LinuxPanel-* && cd panel && bash update.sh && cd .. && rm -f LinuxPanel-*.zip && rm -rf panel && cd /www/server/panel && echo "127.0.0.1 www.bt.cn" >> /etc/hosts && bt 14
+  exit 0;
+}
+
+# 主菜单
+while true
+do
+  clear
+  echo -e "+---------------------------------------------"
+  echo -e "|\033[33m  Linux panel 宝塔历史版本 降级后记得关闭离线自动升级\033[0m"
+  echo -e "降级之后账号密码需要更改，输入bt 5和bt 6"
+  echo -e "网络站长交流群:255192313"
+  echo -e "+---------------------------------------------"
+  echo "     1) 回退1.0.3版本"
+  echo "     2) 回退6.0.0版本"
+  echo "     3) 回退7.9.3版本"
+  echo "     4) 回退7.4.0版本（推荐）"
+  echo "     0) 退出"
+  echo -e "=================================================" 
+  read -p "请选择操作 (1-4 或 0 退出): " action
+
+  case $action in
+    '1')
+      install_1
+      ;;
+    '2')
+      install_2
+      ;;
+    '3')
+      install_3
+      ;;
+    '4')
+      install_4
+      ;;
+    '0')
+      echo -e "\n已退出"
+      exit 0
+      ;;
+    *)
+      echo -e "\n\033[31m 输入错误，请重新选择！\033[0m"
+      sleep 1.5
+      ;;
+  esac
+done
